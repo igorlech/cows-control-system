@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cows control system</title>
+    <link rel="stylesheet" href="styles/mystyle.css">
+</head>
+
+<body>
+    <h1 class="heading">Cows control system</h1>
+    <div class="header">
+        <div>
+            <button class="button" type="button" id="addCowButton">Add cow</button>
+            <button class="button" type="button" id="showAllCowsButton">Show all cows</button>
+        </div>
+        <form class="form" id="rnSearchForm">
+            <input type="search" id="rnField" class="inputField" placeholder="Search serial number" required>
+            <button type="submit" class="button">Search</button>
+        </form>
+    </div>
+    <!--Panel-->
+    <aside class="searchPanel" id="searchPanel">
+        <span class="panelText" id="panelText">A D V A N C E D&nbsp;&nbsp;S E A R C H</span>
+        <form id="searchForm">
+            <div class="closeCross" id="closeCross">X</div>
+            <label for="stallNumber" class="searchFormLabel">Stall number</label>
+            <input type="text" id="stallNumber" class="searchFormField">
+            <label for="breed" class="searchFormLabel">Breed</label>
+            <input type="text" id="breed" class="searchFormField">
+            <label for="lastYearProd" class="searchFormLabel">Max. last year milk production</label>
+            <input type="text" id="lastYearProd" class="searchFormField">
+            <br><br>
+            <div class="searchFormPanel">
+                <button class="searchFormButton" type="reset">Reset</button>
+                <button class="searchFormButton" type="submit">Apply</button>
+            </div>
+        </form>
+    </aside>
+    <!--Add guitar dialog-->
+    <dialog id="cowDialog">
+        <form method="dialog" id="cowDialogForm">
+            <fieldset>
+                <legend>Add new cow</legend>
+                <label for="rnfield">Registration number:</label>
+                <input type="text" class="inputField dialogField" id="rnfield" placeholder="Type in serial number" required>
+
+                <label for="stallfield">Stall number:</label>
+                <input type="text" class="inputField dialogField" id="stallfield" placeholder="Type in builder name" required>
+
+                <label for="breedfield">Breed:</label>
+                <input type="text" class="inputField dialogField" id="breedfield" placeholder="Type in model name" required>
+
+                <label for="birthdayfield">Birthday:</label>
+                <input type="date" class="inputField dialogField" id="birthdayfield" placeholder="Type in guitar type" required>
+
+                <label for="lastyearprodfield">Last year milk production:</label>
+                <input type="number" min="0" max="10000" class="inputField dialogField" id="lastyearprodfield" placeholder="Type in backwood tree sort" required>
+                <br><br>
+                <div class="dialogBtnsPanel">
+                    <button type="button" id="cancelButton" class="button">Cancel</button>
+                    <button type="submit" id="saveButton" class="button">Save</button>
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
+    <!--Delete confirmation dialog starts-->
+    <dialog id="confirmDialog">
+        <form method="dialog" id="confirmDialogForm">
+            <fieldset>
+                <legend>Delete cow?</legend>
+                Do you really want to delete the cow?
+                <br><br>
+                <div class="dialogBtnsPanel">
+                    <button type="submit" class="button">Yes</button>
+                    <button type="button" class="button" id="cancelConfirmBtn">No</button>
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
+    <!--Hidden field-->
+    <form>
+        <input type="hidden" id="hiddenSnField">
+    </form>
+
+    <div id="searchResult">
+        <h1 class="justinfo">WELCOME TO COWS CONTROL SYSTEM</h1>
+    </div>
+
+    <div id="snackbar">Some message will arrive</div>
+
+    <script type="module">
+        import Model from "./models/model.js"
+        import Controller from "./controllers/controller.js"
+        import View from "./views/view.js"
+
+        window.onload = function () {
+            const model = new Model();
+            const controller = new Controller();
+            const view = new View(controller);
+            controller.initialize(model, view);
+        }
+    </script>
+</body>
+
+</html>
