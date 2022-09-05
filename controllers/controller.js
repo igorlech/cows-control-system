@@ -9,9 +9,9 @@ export default class Controller {
         <h1 class="cardheading">${cow.getRegistrationNumber()}</h1>
         <p class="cardelement">Stall number: ${cow.getStallNumber()}</p>
         <p class="cardelement">Breed: ${cow.getBreed()}</p>
-        <p class="cardelement">Birth date:${cow.getBirthday()}</p>
-        <p class="cardelement">Last year milk prod.: ${cow.getLastYearProd()}</p>
-        <div><button type="button" id="${cow.getRegistrationNumber}">Delete</button></div>
+        <p class="cardelement">Birth date: ${cow.getBirthday()}</p>
+        <p class="cardelement">Last year milk prod. (L): ${cow.getLastYearProd()}</p>
+        <div><button type="button" id="${cow.getRegistrationNumber} class="deleteBtn">Delete</button></div>
         </div>`
     }
 

@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cows control system</title>
     <link rel="stylesheet" href="styles/mystyle.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kbf6frr.css">
 </head>
 
 <body>
-    <h1 class="heading">Cows control system</h1>
+    <div class="upheader">
+        <h1 class="heading">Cows control system</h1>
+        <img src="img/cowicon.png" class="headerimage">
+    </div>
     <div class="header">
         <div>
             <button class="button" type="button" id="addCowButton">Add cow</button>
@@ -18,7 +22,7 @@
         </div>
         <form class="form" id="rnSearchForm">
             <input type="search" id="rnField" class="inputField" placeholder="Search serial number" required>
-            <button type="submit" class="button">Search</button>
+            <button type="submit" class="button" id="srchBtn">Search</button>
         </form>
     </div>
     <!--Panel-->
@@ -60,8 +64,8 @@
                 <input type="number" min="0" max="10000" class="inputField dialogField" id="lastyearprodfield" placeholder="Type in backwood tree sort" required>
                 <br><br>
                 <div class="dialogBtnsPanel">
-                    <button type="button" id="cancelButton" class="button">Cancel</button>
-                    <button type="submit" id="saveButton" class="button">Save</button>
+                    <button type="button" id="cancelButton" class="button choose">Cancel</button>
+                    <button type="submit" id="saveButton" class="button choose">Save</button>
                 </div>
             </fieldset>
         </form>
@@ -74,8 +78,8 @@
                 Do you really want to delete the cow?
                 <br><br>
                 <div class="dialogBtnsPanel">
-                    <button type="submit" class="button">Yes</button>
-                    <button type="button" class="button" id="cancelConfirmBtn">No</button>
+                    <button type="submit" class="button choose">Yes</button>
+                    <button type="button" class="button choose" id="cancelConfirmBtn">No</button>
                 </div>
             </fieldset>
         </form>
