@@ -11,7 +11,7 @@ export default class Controller {
         <p class="cardelement">Breed: ${cow.getBreed()}</p>
         <p class="cardelement">Birth date: ${cow.getBirthday()}</p>
         <p class="cardelement">Last year milk prod. (L): ${cow.getLastYearProd()}</p>
-        <div><button type="button" id="${cow.getRegistrationNumber} class="deleteBtn">Delete</button></div>
+        <div><button type="button" id="${cow.getRegistrationNumber()} class="deleteBtn">Delete</button></div>
         </div>`
     }
 
